@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Evolution City</title>
+
+    <meta name="description" content="City Builder è un gioco gestionale sviluppato con HTML, CSS e JavaScript. Costruisci la tua città, gestisci le risorse e fai crescere la popolazione.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="game">
+
+
+    <header id="topbar">
+
+        <div class="logo">
+            🏙️ <span>CITY BUILDER</span>
+        </div>
+
+        <div id="stats">
+
+            <div class="stat">
+                <span class="icon">💰</span>
+                <span id="money">5000</span> €
+            </div>
+
+            <div class="stat">
+                <span class="icon">👥</span>
+                <span id="population">0</span>
+            </div>
+
+            <div class="stat">
+                <span class="icon">📈</span>
+                <span id="income">0</span> €/sec
+            </div>
+
+            <div class="stat">
+                <span class="icon">🏠</span>
+                <span id="houses">0</span>
+            </div>
+
+            <div class="stat">
+                <span class="icon">🏢</span>
+                <span id="offices">0</span>
+            </div>
+
+            <div class="stat">
+                <span class="icon">🏭</span>
+                <span id="factories">0</span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main id="main">
+
+        <aside id="sidebar">
+
+            <h2>Costruzioni</h2>
+
+            <button class="tool active" data-building="house">
+                🏠 Casa
+                <small>100 €</small>
+            </button>
+
+            <button class="tool" data-building="office">
+                🏢 Ufficio
+                <small>350 €</small>
+            </button>
+
+            <button class="tool" data-building="factory">
+                🏭 Fabbrica
+                <small>600 €</small>
+            </button>
+
+            <button class="tool" data-building="park">
+                🌳 Parco
+                <small>80 €</small>
+            </button>
+
+            <button class="tool" data-building="road">
+                🛣 Strada
+                <small>20 €</small>
+            </button>
+
+            <button class="tool demolish" data-building="bulldozer">
+                🗑 Demolisci
+            </button>
+
+            <hr>
+
+            <h2>Informazioni</h2>
+
+            <div class="info-box">
+
+                <p>
+                    Seleziona un edificio dal menu e clicca sulla mappa
+                    per costruire.
+                </p>
+
+                <p>
+                    Gli uffici e le fabbriche producono denaro ogni secondo.
+                </p>
+
+            </div>
+
+            <hr>
+
+            <button id="saveBtn">
+                💾 Salva
+            </button>
+
+            <button id="resetBtn">
+                ♻ Nuova città
+            </button>
+
+        </aside>
+
+        <section id="city-container">
+
+            <div id="city-grid">
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer id="bottom-bar">
+
+        <div id="message">
+
+            Benvenuto Sindaco! Costruisci la tua prima casa.
+
+        </div>
+
+    </footer>
+
+</div>
+
+<div id="tooltip" class="hidden">
+
+    <h3 id="tooltip-title"></h3>
+
+    <p id="tooltip-text"></p>
+
+</div>
+
+<audio id="buildSound" preload="auto">
+    <source src="assets/sounds/build.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="moneySound" preload="auto">
+    <source src="assets/sounds/money.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="clickSound" preload="auto">
+    <source src="assets/sounds/click.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
